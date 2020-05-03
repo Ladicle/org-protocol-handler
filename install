@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CONFIG=.orgprotocol.ini
+
+if [ ! -f ~/$CONFIG ]; then
+    cat <<EOF > ~/$CONFIG
+[emacsclient]
+path=$(which emacsclient)
+EOF
+fi
+
+ln -Fis "$PWD/Org Protocol Handler.app" "/Applications/Org Protocol Handler.app"
